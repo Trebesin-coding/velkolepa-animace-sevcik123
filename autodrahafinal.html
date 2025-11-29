@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Autodráha</title>
+        <style>
+             button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            
+            
+        }
+        .text {
+            font-size: 30px;
+            color: white;
+              transition: color 0.4s ease-in-out;
+             text-align: center;
+             
+        }
+        .text:hover {
+    color: orange;
+}
+            body {
+                background: #222;
+            }
+            .body1 {
+                position: relative;
+                width: 600px;
+                height: 310px;
+                margin: 48px auto;
+                background: #2ca746;
+                border-radius: 40px;
+                overflow: hidden;
+            }
+            .draha {
+                position: absolute;
+                top: 15px;
+                left: 17px;
+                width: 500px;
+                height: 220px;
+                border: 30px solid #000000;
+                border-radius: 60px;
+                background: #5f5757;
+                z-index: 1;
+            }
+          
+            .finish.active {
+                border-top: #bd4949;
+            }
+
+            .finish {
+                position: absolute;
+                left: 140px;
+                top: 15px;
+                width: 10px;
+                height: 0;
+                border-top: 30px solid #fff;
+                z-index: 5;
+                transition: border-top 1s ease;
+            }
+             #auto1, #auto2 {
+            animation: none;
+        }
+            #auto1 {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                top: 20px;
+                left: 170px;
+                z-index: 10;
+              
+            }
+            #auto2 {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                top: 10px;
+                left: 170px;
+                z-index: 10;
+               
+            }
+            @keyframes autox {
+                0% {
+                    translate: 0 0;
+                }
+                19% {
+                    rotate: -90deg;
+                }
+
+                20% {
+                    translate: -150px 0;
+                }
+                39% {
+                    rotate: -90deg;
+                }
+                40% {
+                    translate: -150px 240px;
+                    rotate: -180deg;
+                }
+                55% {
+                    rotate:-180deg ;
+                }
+
+                60% {
+                    translate: 360px 240px;
+                    rotate: -270deg;
+                }
+                79% {
+                    translate: 360px 0px;
+                    rotate: -270deg;
+                }
+                    80% {
+                   
+                    rotate: -360deg;
+                }
+                100% {
+                    translate: 0px 0px;
+                    rotate: -360deg;
+                }
+            }
+            @keyframes autoy { 
+                0% {
+                    translate: 0 0;
+                }
+                19% {
+                    rotate: -90deg;
+                }
+                20% {
+                    translate: -160px 0;
+                    
+                }
+
+                35% {
+                    rotate: -180deg;
+                    rotate: -90deg;
+                }
+
+                40% {
+                    translate: -150px 240px;
+                    rotate: -180deg;
+                }
+                55% {
+                    rotate: -180deg;
+                }
+
+                60% {
+                    translate: 380px 260px;
+                    rotate: -270deg;
+                }
+                79% {
+
+                }
+                80% {
+                    translate: 370px 0px;
+                    rotate: -360deg;
+                }
+                100% {
+                    translate: 0px 0px;
+                    rotate: -360deg;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <p class="text">AUTODRÁHA</p>
+        <div class="body1">
+            
+            <div class="draha"></div>
+            <div class="finish"></div>
+            <div class="auto1">
+                <img id="auto1" src="car1.png" alt="auto1" />
+            </div>
+            <div class="auto2">
+                <img id="auto2" src="car2.png" alt="auto2" />
+            </div>
+        </div>
+    </body>
+    <button onclick="startGame()">START</button>
+
+    <script>
+        function startGame() {
+            
+            document.getElementById("auto1").style.animation = "autox 5s linear infinite";
+            document.getElementById("auto2").style.animation = "autoy 5.7s linear infinite";
+        }
+    </script>
+</html>
